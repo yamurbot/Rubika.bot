@@ -1,10 +1,11 @@
+import os
 from flask import Flask, request
 import json
 import requests
 
 app = Flask(__name__)
 
-TOKEN = 'JGCC0LAEQPJNLCEFQTRLRGYBCEJRNNMTYJKBAKZZDWRPJMLOBJPAYZKAPJDPPFPK'
+TOKEN = os.environ.get("Bot_Token")
 URL = f"https://botapi.rubika.ir/v3/{TOKEN}/sendMessage"
 
 @app.route("/", methods=["POST", "GET"])
